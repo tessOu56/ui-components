@@ -2,6 +2,7 @@ import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import dts from "rollup-plugin-dts";
+import babel from '@rollup/plugin-babel';
 
 export default [
   // JavaScript 打包（ESM 與 CJS）
@@ -18,6 +19,7 @@ export default [
         minimize: true,
       }),
       typescript({ tsconfig: "./tsconfig.json" }),
+      babel({ babelHelpers: 'bundled' })
     ],
   },
   // 型別定義打包

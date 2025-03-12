@@ -1,0 +1,10 @@
+storybook/
+storybook-static/
+src/
+node_modules/
+*.md
+*.log
+*.config.js
+*.config.ts
+.vscode/
+tests/
