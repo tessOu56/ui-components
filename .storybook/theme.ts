@@ -1,0 +1,26 @@
+import { create } from "storybook/internal/theming";
+
+export const uiKitTheme = create({
+  base: "light",
+  brandTitle: "ui-kit",
+  brandUrl: "./",
+  colorPrimary: "#1a4a45",
+  colorSecondary: "#1a4a45",
+  appBg: "#f3eee4",
+  appContentBg: "#fffbf3",
+  appPreviewBg: "#fffbf3",
+  appBorderColor: "#d6cfc2",
+  appBorderRadius: 8,
+  textColor: "#1c1914",
+  textMutedColor: "#534e45",
+  barTextColor: "#534e45",
+  barSelectedColor: "#1a4a45",
+  barHoverColor: "#1a4a45",
+  barBg: "#fffbf3",
+  inputBg: "#fffbf3",
+  inputBorder: "#d6cfc2",
+  inputTextColor: "#1c1914",
+  inputBorderRadius: 8,
+  fontBase: '"Source Sans 3", "Segoe UI", system-ui, sans-serif',
+  fontCode: '"IBM Plex Mono", ui-monospace, Menlo, monospace',
+});

@@ -1,0 +1,36 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Introduction" />
+
+# ui-kit
+
+A small React + TypeScript design-system **lab**: tokens, a handful of accessible primitives, and this Storybook. It is public on purpose — a recruiter-facing walkthrough of how Tess approaches component APIs, contrast, and docs.
+
+It is **not** the published production kit. That lives in [`@is_tess/components`](https://www.npmjs.com/package/@is_tess/components) and is consumed by [AI Search Portal](https://github.com/tessOu56/ai-search-portal).
+
+## What’s in the kit
+
+- **Foundations** — color, type, space, radius, motion as `--ui-*` CSS variables and a `tokens` object
+- **Actions** — `Button` (primary, secondary, ghost, danger)
+- **Forms** — `TextField` with a visible label, hint, and error
+- **Feedback** — `Badge`, `Alert`
+- **Layout** — `Header`, plus a `Workspace` composition story
+
+## How to read this Storybook
+
+1. **Foundations / Tokens** — the scale everything else is built from.
+2. **Actions / Forms / Feedback** — each story has autodocs (props) and, where it helps, a Do / Don’t.
+3. **Layout / Workspace** — the primitives composed into a small sign-in surface. Resize the canvas; the header stacks instead of clipping.
+
+Keyboard: Tab through a Button or TextField story and look for the pine focus ring. `prefers-reduced-motion` short-circuits transitions.
+
+## Using the package locally
+
+```tsx
+import { Button } from "ui-kit";
+import "ui-kit/styles.css";
+
+<Button variant="primary">Save changes</Button>
+```
+
+Build with `pnpm build`. Peer dependency: React 19.
