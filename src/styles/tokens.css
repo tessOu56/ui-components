@@ -1,0 +1,63 @@
+:root {
+  --ui-color-canvas: #f3eee4;
+  --ui-color-surface: #fffbf3;
+  --ui-color-ink: #1c1914;
+  --ui-color-ink-muted: #534e45;
+  --ui-color-line: #d6cfc2;
+  --ui-color-line-strong: #8a8273;
+  --ui-color-pine: #1a4a45;
+  --ui-color-pine-hover: #143833;
+  --ui-color-on-pine: #f3eee4;
+  --ui-color-copper: #8a3f12;
+  --ui-color-danger: #8e2a27;
+  --ui-color-danger-hover: #751f1d;
+  --ui-color-on-danger: #fff8f6;
+  --ui-color-danger-bg: #f6e6e4;
+  --ui-color-success: #1f5c44;
+  --ui-color-success-bg: #e3f0ea;
+  --ui-color-warning: #7a4300;
+  --ui-color-warning-bg: #f4e3c4;
+  --ui-color-info: #1e4a6e;
+  --ui-color-info-bg: #e4ebf3;
+  --ui-color-ring: #1a4a45;
+
+  --ui-space-0: 0px;
+  --ui-space-1: 4px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+  --ui-space-4: 16px;
+  --ui-space-5: 24px;
+  --ui-space-6: 32px;
+  --ui-space-7: 40px;
+  --ui-space-8: 48px;
+  --ui-space-9: 64px;
+
+  --ui-font-sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --ui-font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --ui-font-size-caption: 12px;
+  --ui-font-size-body: 14px;
+  --ui-font-size-body-lg: 16px;
+  --ui-font-size-subtitle: 18px;
+  --ui-font-size-title: 24px;
+  --ui-font-size-display: 32px;
+
+  --ui-line-caption: 16px;
+  --ui-line-body: 22px;
+  --ui-line-body-lg: 24px;
+  --ui-line-subtitle: 28px;
+  --ui-line-title: 32px;
+  --ui-line-display: 40px;
+
+  --ui-radius-sm: 4px;
+  --ui-radius-md: 8px;
+  --ui-radius-lg: 12px;
+  --ui-radius-full: 9999px;
+
+  --ui-duration-fast: 120ms;
+  --ui-duration-med: 200ms;
+  --ui-ease-out: cubic-bezier(0.2, 0, 0, 1);
+
+  --ui-shadow-focus: 0 0 0 2px var(--ui-color-surface),
+    0 0 0 4px var(--ui-color-ring);
+}

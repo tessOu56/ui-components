@@ -1,0 +1,121 @@
+.ui-guidelines {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--ui-space-4);
+  max-width: 48rem;
+  color: var(--ui-color-ink);
+  font-family: var(--ui-font-sans);
+}
+
+.ui-guidelines__panel {
+  display: grid;
+  justify-items: start;
+  gap: var(--ui-space-3);
+  padding: var(--ui-space-4);
+  border: 1px solid var(--ui-color-line);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-color-surface);
+}
+
+.ui-guidelines__panel--dont {
+  border-color: #e2c4c2;
+}
+
+.ui-guidelines__label {
+  margin: 0;
+  font-size: var(--ui-font-size-caption);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ui-guidelines__label--do {
+  color: var(--ui-color-success);
+}
+
+.ui-guidelines__label--dont {
+  color: var(--ui-color-danger);
+}
+
+.ui-guidelines__note {
+  margin: 0;
+  color: var(--ui-color-ink-muted);
+  font-size: var(--ui-font-size-caption);
+  line-height: var(--ui-line-caption);
+  max-width: 28rem;
+}
+
+.ui-guidelines__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ui-space-2);
+}
+
+.ui-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--ui-space-3);
+}
+
+.ui-swatch {
+  display: grid;
+  gap: var(--ui-space-2);
+  min-width: 0;
+}
+
+.ui-swatch__chip {
+  height: 64px;
+  border: 1px solid var(--ui-color-line);
+  border-radius: var(--ui-radius-md);
+}
+
+.ui-swatch__name {
+  margin: 0;
+  font-size: var(--ui-font-size-body);
+  font-weight: 600;
+}
+
+.ui-swatch__meta {
+  margin: 0;
+  color: var(--ui-color-ink-muted);
+  font-family: var(--ui-font-mono);
+  font-size: var(--ui-font-size-caption);
+  line-height: var(--ui-line-caption);
+}
+
+.ui-type-specimen {
+  display: grid;
+  gap: var(--ui-space-4);
+}
+
+.ui-type-specimen__row dt {
+  margin: 0 0 var(--ui-space-1);
+  color: var(--ui-color-ink-muted);
+  font-family: var(--ui-font-mono);
+  font-size: var(--ui-font-size-caption);
+}
+
+.ui-type-specimen__row dd {
+  margin: 0;
+}
+
+.ui-space-scale {
+  display: grid;
+  gap: var(--ui-space-2);
+}
+
+.ui-space-scale__row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  align-items: center;
+  gap: var(--ui-space-3);
+  font-family: var(--ui-font-mono);
+  font-size: var(--ui-font-size-caption);
+  color: var(--ui-color-ink-muted);
+}
+
+.ui-space-scale__bar {
+  height: var(--ui-space-3);
+  background: var(--ui-color-pine);
+  border-radius: var(--ui-radius-sm);
+}

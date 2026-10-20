@@ -1,0 +1,85 @@
+import { Meta } from "@storybook/blocks";
+import { tokens } from "../tokens/tokens";
+
+<Meta title="Foundations/Tokens" />
+
+# Tokens
+
+One scale, two exports: CSS custom properties (`--ui-*`) for components, and the `tokens` object for docs or JS. Values are kept in sync by hand between `src/styles/tokens.css` and `src/tokens/tokens.ts`.
+
+Semantic color is restrained — ink, paper, pine, and a copper accent — with danger / warning / success / info for status. Pairings below are authored for **WCAG AA** (text ≥ 4.5:1, UI chrome ≥ 3:1).
+
+## Color
+
+<div className="ui-swatch-grid">
+  {[
+    ["Canvas", tokens.color.canvas, "Page background"],
+    ["Surface", tokens.color.surface, "Cards, inputs, header"],
+    ["Ink", tokens.color.ink, "Primary text · 15.2:1 on canvas"],
+    ["Ink muted", tokens.color.inkMuted, "Secondary text · 7.1:1 on canvas"],
+    ["Line", tokens.color.line, "Dividers"],
+    ["Line strong", tokens.color.lineStrong, "Input border · 3.3:1"],
+    ["Pine", tokens.color.pine, "Primary action · 8.6:1 with on-pine"],
+    ["Pine hover", tokens.color.pineHover, "Primary pressed/hover"],
+    ["Copper", tokens.color.copper, "Accent · 6.5:1 on canvas"],
+    ["Danger", tokens.color.danger, "Destructive · 7.2:1 on canvas"],
+    ["Success", tokens.color.success, "Positive · 6.8:1 on canvas"],
+    ["Warning", tokens.color.warning, "Caution · 6.9:1 on canvas"],
+    ["Info", tokens.color.info, "Neutral notice · 8.0:1 on canvas"],
+  ].map(([name, value, note]) => (
+    <div className="ui-swatch" key={name}>
+      <div
+        className="ui-swatch__chip"
+        style={{ background: value }}
+      />
+      <p className="ui-swatch__name">{name}</p>
+      <p className="ui-swatch__meta">{value}</p>
+      <p className="ui-swatch__meta">{note}</p>
+    </div>
+  ))}
+</div>
+
+Status **backgrounds** (`dangerBg`, `successBg`, `warningBg`, `infoBg`) are only used behind their matching foreground.
+
+## Type
+
+Source Sans 3 for UI, IBM Plex Mono for token meta. Components inherit `--ui-font-sans`; Storybook loads the faces.
+
+<dl className="ui-type-specimen">
+  {[
+    ["Display · 32/40", tokens.fontSize.display, tokens.lineHeight.display, 700, "Keel notebook"],
+    ["Title · 24/32", tokens.fontSize.title, tokens.lineHeight.title, 700, "Sign in to the notebook"],
+    ["Subtitle · 18/28", tokens.fontSize.subtitle, tokens.lineHeight.subtitle, 700, "Product name in the header"],
+    ["Body large · 16/24", tokens.fontSize.bodyLg, tokens.lineHeight.bodyLg, 400, "Supporting lede copy on a page."],
+    ["Body · 14/22", tokens.fontSize.body, tokens.lineHeight.body, 400, "Buttons, labels, and default copy."],
+    ["Caption · 12/16", tokens.fontSize.caption, tokens.lineHeight.caption, 600, "Hints, badges, and helper text."],
+  ].map(([meta, size, line, weight, sample]) => (
+    <div className="ui-type-specimen__row" key={meta}>
+      <dt>{meta}</dt>
+      <dd style={{ fontSize: size, lineHeight: line, fontWeight: weight }}>
+        {sample}
+      </dd>
+    </div>
+  ))}
+</dl>
+
+## Space
+
+Four-pixel base. Components use `--ui-space-1` through `--ui-space-9` rather than ad-hoc padding.
+
+<div className="ui-space-scale">
+  {Object.entries(tokens.space).map(([key, value]) => (
+    <div className="ui-space-scale__row" key={key}>
+      <span>{key} · {value}</span>
+      <div className="ui-space-scale__bar" style={{ width: value }} />
+    </div>
+  ))}
+</div>
+
+## Radius
+
+`sm` 4px for tight controls, `md` 8px for buttons and inputs, `lg` 12px for panels, `full` for badges.
+
+## Motion
+
+`--ui-duration-fast` 120ms and `--ui-duration-med` 200ms with `--ui-ease-out` (`cubic-bezier(0.2, 0, 0, 1)`). Hover and focus use color only — no bounce, no layout shift. `prefers-reduced-motion: reduce` collapses durations to 0.01ms in `base.css`.

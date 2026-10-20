@@ -1,34 +1,50 @@
 {
   "name": "ui-kit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tess Ou’s React + TypeScript design-system lab: tokens, accessible primitives, Storybook.",
+  "author": "Tess Ou",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tessOu56/ui-components.git"
+  },
+  "homepage": "https://github.com/tessOu56/ui-components#readme",
+  "bugs": {
+    "url": "https://github.com/tessOu56/ui-components/issues"
+  },
   "files": [
     "dist"
   ],
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css"
   },
   "scripts": {
     "clean": "rm -rf dist storybook-static",
-    "build": "pnpm run clean && tsup src/index.ts --format esm,cjs --dts",
+    "build": "pnpm run clean && tsup",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build --quiet",
     "prepublishOnly": "pnpm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "design-system",
+    "react",
+    "storybook",
+    "typescript",
+    "accessibility"
+  ],
   "devDependencies": {
     "@changesets/cli": "^2.28.1",
     "@chromatic-com/storybook": "^3.2.5",
+    "@storybook/addon-a11y": "^8.6.12",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
@@ -37,10 +53,17 @@
     "@storybook/react": "^8.6.12",
     "@storybook/react-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.14",
     "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.5.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "storybook": "^8.6.12",
     "storybook-addon-designs": "^6.3.1",
     "tailwindcss": "^4.0.9",
@@ -52,8 +75,12 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-  "sideEffects": false,
-  "tailwind": {
-    "config": "tailwind.config.ts"
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
